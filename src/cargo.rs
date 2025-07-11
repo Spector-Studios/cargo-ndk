@@ -19,11 +19,8 @@ const ARCH: &str = "darwin-x86_64";
 const ARCH: &str = "linux-x86_64";
 #[cfg(target_os = "windows")]
 const ARCH: &str = "windows-x86_64";
-
 #[cfg(target_os = "android")]
-compile_error!(
-    "You cannot build cargo-ndk _for_ Android. Build it for your host OS and run it with cargo."
-);
+const ARCH: &str = "linux-aarch64;
 
 #[cfg(not(any(
     target_os = "android",
@@ -32,7 +29,7 @@ compile_error!(
     target_os = "windows"
 )))]
 compile_error!("Unsupported target OS");
-#[cfg(not(any(target_os = "macos", target_os = "linux", target_os = "windows")))]
+#[cfg(not(any(target_os = "macos", target_os = "linux", target_os = "windows", target_os = "android")))]
 const ARCH: &str = "unknown";
 
 pub(crate) fn clang_target(rust_target: &str, api_level: u8) -> String {
