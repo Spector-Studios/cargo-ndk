@@ -1,3 +1,5 @@
+_This fork was for enabling `cargo-ndk` to be built on termux. This is no longer required._
+
 # cargo-ndk - Build Rust code for Android
 
 [<img alt="CI" src="https://github.com/bbqsrc/cargo-ndk/actions/workflows/ci.yml/badge.svg">](https://github.com/bbqsrc/cargo-ndk/actions)
